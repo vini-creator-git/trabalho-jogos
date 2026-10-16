@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bkaux8qjp7o4u"]
+
+[ext_resource type="Texture2D" uid="uid://ofmsqt0e3lw3" path="res://PNG/dungeon-01.png" id="1_5ij8v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mh1pb"]
+atlas = ExtResource("1_5ij8v")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mh1pb")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+radius = 7.071068
+
+[node name="pocao" type="AnimatedSprite2D" unique_id=1052742189]
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=449157917]
+shape = SubResource("CircleShape2D_g4v7s")

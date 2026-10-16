@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://c1lsqwqqbyc5d"]
+
+[ext_resource type="Texture2D" uid="uid://kulihdxatu8o" path="res://PNG/sprite-fusion-512209ea-1a63-40d3-8b9d-f16935df769e.png" id="1_yuxfx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c2wt1"]
+atlas = ExtResource("1_yuxfx")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qc3e3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c2wt1")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yuxfx"]
+size = Vector2(20.666668, 30.476192)
+
+[node name="jogador" type="AnimatedSprite2D" unique_id=471220188]
+position = Vector2(-1.0000005, -1.0000005)
+scale = Vector2(0.65625, 0.65625)
+sprite_frames = SubResource("SpriteFrames_qc3e3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1685764552]
+position = Vector2(0.33333397, 4.7683716e-07)
+shape = SubResource("RectangleShape2D_yuxfx")

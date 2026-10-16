@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://bj243qdva0gcd"]
+
+[node name="inimigos" type="AnimatedSprite2D" unique_id=2107501217]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=646294195]
