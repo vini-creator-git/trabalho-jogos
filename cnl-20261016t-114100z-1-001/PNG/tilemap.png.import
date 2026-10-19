@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://kulihdxatu8o"
-path="res://.godot/imported/sprite-fusion-512209ea-1a63-40d3-8b9d-f16935df769e.png-45f9519e13614fc5a96217ae4365b80e.ctex"
+uid="uid://be2ex08k1yiqa"
+path="res://.godot/imported/tilemap.png-0a3f523b392da6300254fb913e149084.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://PNG/sprite-fusion-512209ea-1a63-40d3-8b9d-f16935df769e.png"
-dest_files=["res://.godot/imported/sprite-fusion-512209ea-1a63-40d3-8b9d-f16935df769e.png-45f9519e13614fc5a96217ae4365b80e.ctex"]
+source_file="res://PNG/tilemap.png"
+dest_files=["res://.godot/imported/tilemap.png-0a3f523b392da6300254fb913e149084.ctex"]
 
 [params]
 

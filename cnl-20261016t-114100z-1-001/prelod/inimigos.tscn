@@ -1,5 +1,28 @@
 [gd_scene format=3 uid="uid://bj243qdva0gcd"]
 
+[ext_resource type="Texture2D" uid="uid://be2ex08k1yiqa" path="res://PNG/tilemap.png" id="1_38gda"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b5k2d"]
+atlas = ExtResource("1_38gda")
+region = Rect2(34, 170, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k864a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b5k2d")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sai5s"]
+
 [node name="inimigos" type="AnimatedSprite2D" unique_id=2107501217]
+scale = Vector2(1.53125, 1.53125)
+sprite_frames = SubResource("SpriteFrames_k864a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=646294195]
+position = Vector2(0, -1.3061237)
+shape = SubResource("CircleShape2D_sai5s")

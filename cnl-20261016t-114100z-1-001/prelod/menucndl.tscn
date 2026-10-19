@@ -1,20 +1,18 @@
 [gd_scene format=3 uid="uid://pu6vtyhrcwxu"]
 
-[ext_resource type="Texture2D" uid="uid://bdjd711otpo72" path="res://Vector/panel_brown.svg" id="1_cl3fq"]
-[ext_resource type="FontFile" uid="uid://pjsnfwunkul8" path="res://PNG/PixelifySans-Medium.ttf" id="2_f48eq"]
-[ext_resource type="FontFile" uid="uid://cwmkfktoj1ujg" path="res://PNG/PixelifySans-SemiBold.ttf" id="3_t8ntf"]
-[ext_resource type="Texture2D" uid="uid://b545pclem8unk" path="res://PNG/Double/button_brown.png" id="4_163ns"]
+[ext_resource type="Script" uid="uid://qpgbxtkgppxw" path="res://script/menucndl.gd" id="1_lmvep"]
+[ext_resource type="Texture2D" uid="uid://cs130gckcu6v4" path="res://Vector/button_brown.svg" id="2_yy8y1"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mbbgv"]
-texture = ExtResource("1_cl3fq")
+texture = ExtResource("2_yy8y1")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_huvfy"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_adlld"]
-texture = ExtResource("4_163ns")
+[sub_resource type="FontVariation" id="FontVariation_t8ntf"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yjjhb"]
-texture = ExtResource("4_163ns")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_adlld"]
 
 [node name="Control" type="Control" unique_id=2085025932]
 layout_mode = 3
@@ -23,12 +21,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_lmvep")
 
 [node name="Panel" type="Panel" parent="." unique_id=1716938980]
 layout_mode = 0
-offset_left = -1.0
-offset_right = 319.0
-offset_bottom = 180.0
+offset_left = 3.0
+offset_right = 336.0
+offset_bottom = 225.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_mbbgv")
 
 [node name="Panel2" type="Panel" parent="." unique_id=355127328]
@@ -41,37 +40,38 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_huvfy")
 
 [node name="Label" type="Label" parent="." unique_id=79688014]
 layout_mode = 0
-offset_left = 108.0
-offset_top = 28.0
-offset_right = 208.0
-offset_bottom = 91.0
+offset_left = 79.0
+offset_top = 22.0
+offset_right = 236.0
+offset_bottom = 107.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0.880717, 0.405587, 0.148896, 1)
 theme_override_constants/line_spacing = 2
 theme_override_constants/shadow_outline_size = 3
-theme_override_fonts/font = ExtResource("2_f48eq")
-theme_override_font_sizes/font_size = 15
-text = "Caverninhas
- 	             e   
-  lagartixas"
+theme_override_fonts/font = SubResource("FontVariation_t8ntf")
+theme_override_font_sizes/font_size = 19
+text = "   caverninhas 
+            e
+     largatixas "
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=947605634]
 layout_mode = 0
-offset_left = 67.0
-offset_top = 102.0
-offset_right = 253.0
-offset_bottom = 146.0
+offset_left = 88.0
+offset_top = 123.0
+offset_right = 225.0
+offset_bottom = 173.0
 
-[node name="Button" type="Button" parent="VBoxContainer" unique_id=1798329953]
+[node name="jogar" type="Button" parent="VBoxContainer" unique_id=1741126889]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_t8ntf")
+theme_override_styles/normal = SubResource("StyleBoxTexture_yjjhb")
+text = "Desjogar"
+
+[node name="sair" type="Button" parent="VBoxContainer" unique_id=1798329953]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxTexture_adlld")
 text = "Jogar"
 
-[node name="Button2" type="Button" parent="VBoxContainer" unique_id=1741126889]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_f48eq")
-theme_override_styles/normal = SubResource("StyleBoxTexture_yjjhb")
-text = "Desjogar"
+[connection signal="pressed" from="VBoxContainer/jogar" to="." method="_on_jogar_pressed"]
+[connection signal="pressed" from="VBoxContainer/sair" to="." method="_on_sair_pressed"]

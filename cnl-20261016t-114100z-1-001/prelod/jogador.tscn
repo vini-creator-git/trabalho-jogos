@@ -1,30 +1,53 @@
 [gd_scene format=3 uid="uid://c1lsqwqqbyc5d"]
 
-[ext_resource type="Texture2D" uid="uid://kulihdxatu8o" path="res://PNG/sprite-fusion-512209ea-1a63-40d3-8b9d-f16935df769e.png" id="1_yuxfx"]
+[ext_resource type="Texture2D" uid="uid://be2ex08k1yiqa" path="res://PNG/tilemap.png" id="1_k864a"]
+[ext_resource type="Script" uid="uid://dmir75s74lt5g" path="res://script/jogador.gd" id="2_k864a"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_c2wt1"]
-atlas = ExtResource("1_yuxfx")
-region = Rect2(0, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_k864a"]
+atlas = ExtResource("1_k864a")
+region = Rect2(34, 136, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sai5s"]
+atlas = ExtResource("1_k864a")
+region = Rect2(34, 136, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3d7j0"]
+atlas = ExtResource("1_k864a")
+region = Rect2(0, 136, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qc3e3"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_c2wt1")
+"texture": SubResource("AtlasTexture_k864a")
 }],
 "loop": 1,
 "name": &"default",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 0.51,
+"texture": SubResource("AtlasTexture_sai5s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3d7j0")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yuxfx"]
-size = Vector2(20.666668, 30.476192)
+size = Vector2(11.760256, 14.131503)
 
 [node name="jogador" type="AnimatedSprite2D" unique_id=471220188]
-position = Vector2(-1.0000005, -1.0000005)
-scale = Vector2(0.65625, 0.65625)
+position = Vector2(1.1920929e-07, 1)
+scale = Vector2(1.0203862, 1.0614585)
 sprite_frames = SubResource("SpriteFrames_qc3e3")
+autoplay = "default"
+script = ExtResource("2_k864a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1685764552]
-position = Vector2(0.33333397, 4.7683716e-07)
+position = Vector2(0, 0.9421015)
+scale = Vector2(0.9999998, 0.99999976)
 shape = SubResource("RectangleShape2D_yuxfx")
